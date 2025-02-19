@@ -1,0 +1,11 @@
+(lang dune 3.0)
+(name algorithms)
+(generate_opam_files true)
+(package
+ (name algorithms)
+ (depends
+  (ocaml (>= 4.14.0))
+  (dune (>= 3.0))
+  (alcotest :with-test)
+  (core (>= v0.14.0))
+  (benchmark (>= 1.6))))
