@@ -1,5 +1,5 @@
 # OCaml
 
-'''bash
+```bash
 opam install core core_bench alcotest
-'''
+```
