@@ -1,0 +1,60 @@
+(lang dune 3.17)
+(name algorithms)
+(sections (lib .) (libexec .) (bin ../../bin))
+(files
+ (lib
+  (META
+   algorithms.a
+   algorithms.cma
+   algorithms.cmi
+   algorithms.cmt
+   algorithms.cmx
+   algorithms.cmxa
+   algorithms.ml
+   algorithms__Sorting.cmi
+   algorithms__Sorting.cmt
+   algorithms__Sorting.cmti
+   algorithms__Sorting.cmx
+   algorithms__Tree.cmi
+   algorithms__Tree.cmt
+   algorithms__Tree.cmti
+   algorithms__Tree.cmx
+   dune-package
+   opam
+   sorting.ml
+   sorting.mli
+   tree.ml
+   tree.mli))
+ (libexec (algorithms.cmxs))
+ (bin (algorithms)))
+(library
+ (name algorithms)
+ (kind normal)
+ (archives (byte algorithms.cma) (native algorithms.cmxa))
+ (plugins (byte algorithms.cma) (native algorithms.cmxs))
+ (native_archives algorithms.a)
+ (requires core)
+ (main_module_name Algorithms)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name algorithms)
+     (visibility public)
+     (kind alias)
+     (source (path Algorithms) (impl (path algorithms.ml-gen))))
+    (name Algorithms)
+    (modules
+     (module
+      (obj_name algorithms__Sorting)
+      (visibility public)
+      (source
+       (path Sorting)
+       (intf (path sorting.mli))
+       (impl (path sorting.ml))))
+     (module
+      (obj_name algorithms__Tree)
+      (visibility public)
+      (source (path Tree) (intf (path tree.mli)) (impl (path tree.ml))))))
+   (wrapped true))))

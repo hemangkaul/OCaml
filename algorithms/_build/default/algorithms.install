@@ -1,0 +1,30 @@
+lib: [
+  "_build/install/default/lib/algorithms/META"
+  "_build/install/default/lib/algorithms/algorithms.a"
+  "_build/install/default/lib/algorithms/algorithms.cma"
+  "_build/install/default/lib/algorithms/algorithms.cmi"
+  "_build/install/default/lib/algorithms/algorithms.cmt"
+  "_build/install/default/lib/algorithms/algorithms.cmx"
+  "_build/install/default/lib/algorithms/algorithms.cmxa"
+  "_build/install/default/lib/algorithms/algorithms.ml"
+  "_build/install/default/lib/algorithms/algorithms__Sorting.cmi"
+  "_build/install/default/lib/algorithms/algorithms__Sorting.cmt"
+  "_build/install/default/lib/algorithms/algorithms__Sorting.cmti"
+  "_build/install/default/lib/algorithms/algorithms__Sorting.cmx"
+  "_build/install/default/lib/algorithms/algorithms__Tree.cmi"
+  "_build/install/default/lib/algorithms/algorithms__Tree.cmt"
+  "_build/install/default/lib/algorithms/algorithms__Tree.cmti"
+  "_build/install/default/lib/algorithms/algorithms__Tree.cmx"
+  "_build/install/default/lib/algorithms/dune-package"
+  "_build/install/default/lib/algorithms/opam"
+  "_build/install/default/lib/algorithms/sorting.ml"
+  "_build/install/default/lib/algorithms/sorting.mli"
+  "_build/install/default/lib/algorithms/tree.ml"
+  "_build/install/default/lib/algorithms/tree.mli"
+]
+libexec: [
+  "_build/install/default/lib/algorithms/algorithms.cmxs"
+]
+bin: [
+  "_build/install/default/bin/algorithms"
+]

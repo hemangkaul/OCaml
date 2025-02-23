@@ -1,0 +1,6 @@
+description = ""
+requires = "core"
+archive(byte) = "algorithms.cma"
+archive(native) = "algorithms.cmxa"
+plugin(byte) = "algorithms.cma"
+plugin(native) = "algorithms.cmxs"
