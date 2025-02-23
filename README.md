@@ -22,25 +22,13 @@ $ dune build
 $ dune exec hello
 ```
 
-## Script
+## Exercises
 
-In order to use a script in the OCaml REPL (read evaluate print loop) write a script in an ml file e.g. 
+Each exercise introduces key OCaml concepts:
+1. Basic function definition and arithmetic
+2. Pattern matching and guards
+3. Recursive functions and list processing
+4. Algebraic data types
+5. Higher-order functions and options
 
-test.ml:
-
-```ocaml
-let print_hello() = print_string "hello world!\n"
-```
-
-then run it in the top-level REPL as such:
-
-```bash
-$ ocaml
-OCaml version 5.2.1
-Enter #help;; for help.
-
-# #use "test.ml";;
-hello world!
-val print_hello : unit = ()
-#
-```
+Test your solutions in OCaml REPL (utop) or by creating a .ml file.

@@ -92,12 +92,3 @@ let add_one x = x + 1
 let times_two x = x * 2
 assert (compose add_one times_two 3 = 7)
 ```
-
-Each exercise introduces key OCaml concepts:
-1. Basic function definition and arithmetic
-2. Pattern matching and guards
-3. Recursive functions and list processing
-4. Algebraic data types
-5. Higher-order functions and options
-
-Test your solutions in OCaml REPL (utop) or by creating a .ml file.
