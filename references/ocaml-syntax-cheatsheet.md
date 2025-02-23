@@ -133,15 +133,78 @@ let area = function
 ```ocaml
 (* Option Type *)
 type 'a option = None | Some of 'a
+
+(* Option Creation *)
+let x = Some 42        (* Some int *)
+let y = None          (* 'a option *)
+let s = Some "hello"   (* Some string *)
+
+(* Option Pattern Matching *)
+let describe_opt = function
+  | None -> "nothing"
+  | Some x -> "got value: " ^ string_of_int x
+
+(* Common Option Functions *)
+let double_opt x = Option.map (fun n -> n * 2) x
+let value_or_default opt ~default = Option.value opt ~default
+let combined = Option.bind (Some 42) (fun x -> Some (x + 1))
+let ( >>= ) = Option.bind  (* Monadic bind operator *)
+
+(* Option Examples *)
 let safe_div x y =
   if y = 0 then None
   else Some (x / y)
 
+let safe_head = function
+  | [] -> None
+  | x::_ -> Some x
+
+let safe_find key map =
+  try Some (Map.find key map)
+  with Not_found -> None
+
 (* Result Type *)
 type ('a, 'e) result = Ok of 'a | Error of 'e
+
+(* Result Creation *)
+let success = Ok 42
+let failure = Error "something went wrong"
+
+(* Result Pattern Matching *)
+let handle_result = function 
+  | Ok value -> Printf.sprintf "Success: %d" value
+  | Error msg -> Printf.sprintf "Failed: %s" msg
+
+(* Common Result Functions *)
+let map_result r f = 
+  match r with
+  | Ok v -> Ok (f v)
+  | Error e -> Error e
+
+let bind_result r f =
+  match r with
+  | Ok v -> f v
+  | Error e -> Error e
+
+(* Result Examples *)
 let safe_div x y =
   if y = 0 then Error "Division by zero"
   else Ok (x / y)
+
+let chain_computations x y =
+  safe_div x y
+  |> bind_result (fun result ->
+    if result < 0 then Error "Negative result"
+    else Ok (result * 2))
+
+(* Combining Options and Results *)
+let option_to_result = function
+  | None -> Error "None value"
+  | Some x -> Ok x
+
+let result_to_option = function
+  | Ok x -> Some x
+  | Error _ -> None
 ```
 
 ## Modules and Functors
